@@ -20,7 +20,7 @@ const link2FirstCard = link1FirstCard.nextElementSibling;
 // A- Find all the anchor tags inside the nav element
 const links = document.querySelectorAll("nav a");
 // B- Loop over the links and console.log their text content
-links.forEach((link) => console.log(link.textContent)); // higher order function => function that takes another function as an argument
+// links.forEach((link) => console.log(link.textContent)); // higher order function => function that takes another function as an argument
 // C- Turn the collection of links into a real array
 const linksArr = Array.from(links);
 // D- Use .filter to find the anchor tag with the textContent of "Home"
@@ -67,6 +67,37 @@ blogLink.classList.add("menu-item");
 // DOM nodes can only exist in one spot in the DOM
 // We cannot append the same copy multiple times
 
+const secondCard = firstCard.cloneNode(true);
+
+document.querySelector(".card-group").appendChild(secondCard);
+header.remove();
+document.body.prepend(header);
+
+const data = {
+  contact: {
+    "contact-heading": "contact",
+    address: "123 Way 456 Street Somewhere, USA",
+    phone: "1 (888) 888-888 ",
+    email: "sales@greatidea.to",
+  },
+};
+
+// THERE ARE 2 WAYS TO ACCESS DATA IN AN OBJECT
+
+// dot notation     => blah.name => const blah = { name: 'Grayson' }
+// bracket notation => 1.) variables => const userInput = 'name' => blah[userInput]
+//                     2.) data['contact']['contact-heading']
+
 // 👉 8- Removing an existing element and putting it back [STRETCH if time allows]
+
+const contactHeading = document.querySelector(".contact-heading");
+const address = document.querySelector(".address");
+const phone = document.querySelector(".phone");
+const email = document.querySelector(".email");
+
+contactHeading.textContent = data["contact"]["contact-heading"];
+address.textContent = data["contact"]["address"];
+phone.textContent = data["contact"]["phone"];
+email.textContent = data["contact"]["email"];
 
 // 👉 9- Show to students the insertAdjacentHTML method [STRETCH if time allows]
