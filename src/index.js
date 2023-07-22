@@ -49,10 +49,19 @@ link1FirstCard.setAttribute("href", "https://pexels.com/search/dog");
 
 // 👉 5- Changing the styling of an element
 //  A- By changing the class names on the element with the classList API
+header.classList.add("sky");
+header.classList.remove("sky");
 //  B- By manipulating inline styles on the element
+header.style.fontSize = "2em";
+// setInterval(() => header.classList.toggle("sky"), 1000);
 
 // 👉 6- Creating new elements from scratch and appending them
 // Create a new link inside the nav for "Blog"
+const blogLink = document.createElement("a"); // THIS HAS TO BE A DOM TAG NAME
+blogLink.textContent = "Blog";
+blogLink.href = "#";
+document.querySelector("nav").appendChild(blogLink);
+blogLink.classList.add("menu-item");
 
 // 👉 7- Making a copy of the card and appending it to the card group
 // DOM nodes can only exist in one spot in the DOM
